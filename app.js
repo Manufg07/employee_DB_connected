@@ -58,9 +58,9 @@ app.get('/api/employee', async (req, res) => {
 });
 
 app.get('/api/employee/:id', async (req, res) => {
-    const empid = req.params.id; // Changed from id to empid
+    const empid = req.params.id; // empid
     try {
-        const details = await sample.findOne({ empid: empid }); // Updated query to use empid
+        const details = await sample.findOne({ empid: empid }); //  empid
         console.log("details", details);
         res.json(details);
     } catch (error) {
@@ -69,7 +69,7 @@ app.get('/api/employee/:id', async (req, res) => {
 });
 
 app.put('/api/update/:id', async (req, res) => {
-    const empid = req.params.id; // Changed from id to empid
+    const empid = req.params.id; 
     const { name, position, department } = req.body;
     try {
         const updatedEmployee = await sample.findOneAndUpdate(
@@ -90,7 +90,7 @@ app.put('/api/update/:id', async (req, res) => {
 app.delete('/api/delete/:id', async (req, res) => {
     const empid = req.params.id; // Changed from id to empid
     try {
-        const result = await sample.findOneAndDelete({ empid: empid }); // Updated query to use empid
+        const result = await sample.findOneAndDelete({ empid: empid }); // empid
         if (result) {
             res.json({ message: 'Employee deleted successfully' });
         } else {
