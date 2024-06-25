@@ -37,14 +37,14 @@
 
     <script>
         async function loadEmployee() {
-            const empid = window.location.pathname.split('/').pop(); // Changed from id to empid
+            const empid = window.location.pathname.split('/').pop(); 
             console.log('Loading employee with ID:', empid);
             try {
-                const response = await fetch(`/api/employee/${empid}`); // Updated fetch URL to use empid
+                const response = await fetch(`/api/employee/${empid}`); 
                 const employee = await response.json();
                 console.log('Fetched employee data:', employee);
                 if (response.ok) {
-                    document.getElementById('empid').value = employee.empid || ''; // Updated to use empid
+                    document.getElementById('empid').value = employee.empid || ''; 
                     document.getElementById('name').value = employee.name || '';
                     document.getElementById('position').value = employee.position || '';
                     document.getElementById('department').value = employee.department || '';
@@ -66,7 +66,7 @@
             };
             console.log('Updating employee with data:', data);
             try {
-                const response = await fetch(`/api/update/${empid}`, { // Updated fetch URL to use empid
+                const response = await fetch(`/api/update/${empid}`, { 
                     method: 'PUT',
                     headers: {
                         'Content-Type': 'application/json'
