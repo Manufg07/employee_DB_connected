@@ -49,16 +49,16 @@
                 });
                 if (response.ok) {
                     const data = await response.json();
-                    console.log(data.message); // Log success message
-                    window.location.href = '/'; // Redirect to home page or handle as needed
+                    console.log(data.message); 
+                    window.location.href = '/'; 
                 } else {
                     const error = await response.json();
                     console.error('Error deleting employee:', error.message);
-                    alert('Failed to delete employee: ' + error.message); // Show error message
+                    alert('Failed to delete employee: ' + error.message); 
                 }
             } catch (error) {
                 console.error('Error deleting employee:', error);
-                alert('Failed to delete employee: ' + error.message); // Show error message
+                alert('Failed to delete employee: ' + error.message); 
             }
         }
 
